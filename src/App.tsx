@@ -1,3 +1,5 @@
+import { Spacing } from '@components/base'
+
 const App = () => {
 	return (
 		<main>
@@ -5,7 +7,7 @@ const App = () => {
 				<div>Home</div>
 				<div>ㅎㅇ</div>
 			</header>
-
+			<Spacing size={60} />
 			<div className="flex align-center justify-center">
 				<h1>About Me</h1>
 			</div>
