@@ -3,9 +3,9 @@ import { Spacing } from '@components/base'
 
 import { css } from '@emotion/react'
 
-const Contact = ({ phoneNumber, email }: { phoneNumber?: string; email?: string }) => {
+const Contact = ({ contacts: { phoneNumber, email } }: { contacts: { phoneNumber?: string; email?: string } }) => {
 	return (
-		<section className="px-[20%] text-sm">
+		<section className="text-sm">
 			<h2 className="font-bold text-2xl">Contact</h2>
 			<Spacing size={20} />
 			<div

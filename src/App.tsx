@@ -1,18 +1,24 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Home from 'pages/Home'
 import MainLayout from 'layouts/MainLayout'
+import Home from 'pages/Home'
 
 const App = () => {
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route element={<MainLayout />}>
-					<Route path="/" element={<Home />} />
-				</Route>
-			</Routes>
+			<MainRoutes />
 		</BrowserRouter>
 	)
 }
 
 export default App
+
+const MainRoutes = () => {
+	return (
+		<Routes>
+			<Route element={<MainLayout />}>
+				<Route path="/" element={<Home />} />
+			</Route>
+		</Routes>
+	)
+}
