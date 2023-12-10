@@ -1,14 +1,13 @@
+import Section from '@components/Section'
 import { isNotNil } from 'utils'
-import { Spacing } from '@components/base'
 
 import { css } from '@emotion/react'
 
 const Contact = ({ contacts: { phoneNumber, email } }: { contacts: { phoneNumber?: string; email?: string } }) => {
 	return (
-		<section className="text-sm">
-			<h2 className="font-bold text-2xl">Contact</h2>
-			<Spacing size={20} />
-			<div
+		<Section>
+			<Section.Title>Contract</Section.Title>
+			<Section.Content
 				css={css`
 					display: grid;
 					grid-template-columns: max-content auto;
@@ -26,8 +25,8 @@ const Contact = ({ contacts: { phoneNumber, email } }: { contacts: { phoneNumber
 						<span>{email}</span>
 					</>
 				)}
-			</div>
-		</section>
+			</Section.Content>
+		</Section>
 	)
 }
 
