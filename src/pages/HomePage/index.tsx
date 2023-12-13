@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 
 import { Separated, Spacing } from '@components/base'
-import Contact from 'pages/Home/components/Contact'
-import Profile from 'pages/Home/components/Profile'
+import Contact from 'pages/HomePage/components/Contact'
+import Profile from 'pages/HomePage/components/Profile'
 import { isNotNil } from 'utils'
 
 import Career from './components/Career'
@@ -10,7 +10,7 @@ import Introduction from './components/Introduction'
 import Site from './components/Site'
 import { careers, contacts, sites } from './data/mock'
 
-const Home = () => {
+const HomePage = () => {
 	const careerSectionRef = useRef<HTMLElement>(null)
 	return (
 		<section className="px-[20%]">
@@ -34,4 +34,4 @@ const Home = () => {
 	)
 }
 
-export default Home
+export default HomePage
