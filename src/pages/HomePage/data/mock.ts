@@ -1,4 +1,5 @@
 import { CareerItem } from 'remotes/models/Career'
+import { Post } from 'remotes/models/Post'
 
 export const contacts: {
 	phoneNumber?: string
@@ -32,5 +33,26 @@ export const careers: CareerItem[] = [
 			start: '2022.04',
 			end: '2022.11',
 		},
+	},
+]
+
+export const posts: Post[] = [
+	{
+		id: 1,
+		title: '첫 번째 포스트',
+		content: '이것은 첫 번째 포스트의 내용입니다. 여기에 더 많은 텍스트가 들어갈 수 있습니다.',
+		createdAt: '2023-01-01',
+	},
+	{
+		id: 2,
+		title: '두 번째 포스트',
+		content: '두 번째 포스트의 내용입니다. 다양한 정보를 포함할 수 있습니다.',
+		createdAt: '2023-01-02',
+	},
+	{
+		id: 3,
+		title: '세 번째 포스트',
+		content: '세 번째 포스트에 대한 설명입니다. 이곳에는 예시 텍스트가 들어갑니다.',
+		createdAt: '2023-01-03',
 	},
 ]
