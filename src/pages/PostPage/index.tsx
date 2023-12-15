@@ -16,6 +16,10 @@ const PostPage = () => {
 				<Section.Title>게시글</Section.Title>
 				<Section.Content>
 					<PostList posts={posts} />
+					<Spacing size={40} />
+					<Flex justify="flex-end">
+						<Button>게시글 작성하기</Button>
+					</Flex>
 				</Section.Content>
 			</Section>
 		</div>
