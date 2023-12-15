@@ -1,11 +1,13 @@
 import Section from '@components/Section'
 import { Spacing } from '@components/base'
-import { posts } from 'pages/HomePage/data/mock'
+import { withSuspense } from '@components/withSuspense'
 import { Post } from 'remotes/models/Post'
+import { usePosts } from 'remotes/query/usePosts'
 
 import styled from '@emotion/styled'
 
 const PostPage = () => {
+	const posts = usePosts()
 	return (
 		<div className="px-[20%]">
 			<Spacing size={80} />
@@ -19,7 +21,9 @@ const PostPage = () => {
 	)
 }
 
-export default PostPage
+export default withSuspense(PostPage, {
+	fallback: null,
+})
 
 const PostList = ({ posts }: { posts: Post[] }) => {
 	return (
