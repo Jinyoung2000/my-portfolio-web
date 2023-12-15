@@ -1,5 +1,6 @@
 import Section from '@components/Section'
-import { Spacing } from '@components/base'
+import { Button, Spacing } from '@components/base'
+import { Flex } from '@components/utils'
 import { withSuspense } from '@components/withSuspense'
 import { Post } from 'remotes/models/Post'
 import { usePosts } from 'remotes/query/usePosts'

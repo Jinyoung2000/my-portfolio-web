@@ -1,3 +1,4 @@
+export * from '../utils/Separated'
+export * from '../utils/Spacing'
 export * from './ArrowButton'
-export * from './Separated'
-export * from './Spacing'
+export * from './Button'
