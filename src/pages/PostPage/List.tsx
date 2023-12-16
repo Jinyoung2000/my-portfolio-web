@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import Section from '@components/Section'
 import { Button, Spacing } from '@components/base'
 import { Flex } from '@components/utils'
@@ -9,6 +11,7 @@ import styled from '@emotion/styled'
 
 const PostPage = () => {
 	const posts = usePosts()
+	const navigate = useNavigate()
 	return (
 		<div className="px-[20%]">
 			<Spacing size={80} />
@@ -18,7 +21,12 @@ const PostPage = () => {
 					<PostList posts={posts} />
 					<Spacing size={40} />
 					<Flex justify="flex-end">
-						<Button>게시글 작성하기</Button>
+						<Button
+							onClick={() => {
+								navigate('/posts/new')
+							}}>
+							게시글 작성하기
+						</Button>
 					</Flex>
 				</Section.Content>
 			</Section>
