@@ -23,15 +23,15 @@ export const FONT_SIZE = {
 	`,
 	f24: css`
 		font-size: 24px;
-		letter-spacing: 30px;
+		line-height: 30px;
 	`,
 	f22: css`
 		font-size: 22px;
-		letter-spacing: 28px;
+		line-height: 28px;
 	`,
 	f20: css`
 		font-size; 20px;
-		letter-spacing: 24px;
+		line-height: 24px;
 	`,
 	f18: css`
 		font-size: 18px;
