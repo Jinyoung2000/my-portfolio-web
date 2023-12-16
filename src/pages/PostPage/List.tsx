@@ -13,24 +13,21 @@ const PostPage = () => {
 	const posts = usePosts()
 	const navigate = useNavigate()
 	return (
-		<div className="px-[20%]">
-			<Spacing size={80} />
-			<Section>
-				<Section.Title>게시글</Section.Title>
-				<Section.Content>
-					<PostList posts={posts} />
-					<Spacing size={40} />
-					<Flex justify="flex-end">
-						<Button
-							onClick={() => {
-								navigate('/posts/new')
-							}}>
-							게시글 작성하기
-						</Button>
-					</Flex>
-				</Section.Content>
-			</Section>
-		</div>
+		<Section>
+			<Section.Title>게시글</Section.Title>
+			<Section.Content>
+				<PostList posts={posts} />
+				<Spacing size={40} />
+				<Flex justify="flex-end">
+					<Button
+						onClick={() => {
+							navigate('/posts/new')
+						}}>
+						게시글 작성하기
+					</Button>
+				</Flex>
+			</Section.Content>
+		</Section>
 	)
 }
 

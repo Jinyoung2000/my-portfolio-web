@@ -13,8 +13,7 @@ import { careers, contacts, sites } from './data/mock'
 const HomePage = () => {
 	const careerSectionRef = useRef<HTMLElement>(null)
 	return (
-		<div className="px-[20%]">
-			<Spacing size={80} />
+		<>
 			<Profile name="성진영" job="Frontend Developer" />
 			<Spacing size={40} />
 			{isNotNil(contacts) && <Contact contacts={contacts} />}
@@ -30,7 +29,7 @@ const HomePage = () => {
 				<Introduction />
 				{isNotNil(careers) && <Career ref={careerSectionRef} careers={careers} />}
 			</Separated>
-		</div>
+		</>
 	)
 }
 

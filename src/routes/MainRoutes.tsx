@@ -9,11 +9,11 @@ const MainRoutes = () => {
 	return (
 		<Routes>
 			<Route element={<MainLayout />}>
-				<Route path="/" element={<HomePage />} />
-				<Route path="/posts">
-					<Route path="/" element={<PostPage.List />} />
+				<Route path="" element={<HomePage />} />
+				<Route path="posts">
+					<Route path="" element={<PostPage.List />} />
+					<Route path="new" element={<PostPage.New />} />
 					<Route path=":id" element={<PostPage.Detail />} />
-					<Route path="/new" element={<PostPage.New />} />
 				</Route>
 			</Route>
 		</Routes>
