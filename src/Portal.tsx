@@ -31,15 +31,15 @@ const Portal = ({ children }: PortalProps) => {
 
 export default Portal
 
-const ModalBackground = styled.div({
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
-	position: 'fixed',
-	zIndex: 1,
-	top: 0,
-	left: 0,
-	height: '100vh',
-	width: '100vw',
-	backgroundColor: 'rgba(18, 22, 26, 0.72)',
-})
+const ModalBackground = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(18, 22, 26, 0.72);
+`

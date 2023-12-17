@@ -1,77 +1,83 @@
-import { ComponentProps, PropsWithChildren, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
-import { Input } from './Input'
+import { Input as BaseInput } from './Input'
 import { Txt } from './Txt'
 
-const LabelInputBox = styled.label`
-	position: relative;
-	width: 100%;
-`
+import { TextArea as BaseTextArea } from '.'
 
-const LabelBox = styled.div`
-	display: flex;
-	align-items: center;
-	height: 40px;
-`
+const Label = ({ children }: { children: ReactNode }) => (
+	<label
+		css={css`
+			position: relative;
+			width: 100%;
+		`}>
+		{children}
+	</label>
+)
 
-const InputBox = styled.div`
-	display: flex;
-	column-gap: 5px;
-`
-
-type InputProps = ComponentProps<typeof Input>
-
-interface LabelInputProps extends InputProps {
-	name: string
-	button?: ReactNode
-	extraMessage?: string
-	errorMessage?: string | null
-}
-
-const LabelInput = ({
-	name,
-	button,
-	extraMessage,
-	errorMessage,
-	children,
-	...props
-}: PropsWithChildren<LabelInputProps>) => {
-	return (
-		<LabelInputBox>
-			<LabelBox>
-				<Txt size="f12" weight="bold">
-					{name}
-				</Txt>
-			</LabelBox>
+const Title = ({ children }: { children: ReactNode }) => (
+	<div
+		css={css`
+			display: flex;
+			align-items: center;
+			height: 40px;
+		`}>
+		<Txt size="f12" weight="bold">
 			{children}
-			<InputBox>
-				<Input spellCheck={false} {...props} />
-				{button}
-			</InputBox>
-			{!errorMessage && extraMessage && (
-				<Txt
-					size="f10"
-					color="placeholder"
-					css={{
-						marginTop: 5,
-					}}>
-					{extraMessage}
-				</Txt>
-			)}
-			{errorMessage && (
-				<Txt
-					size="f10"
-					css={{
-						marginTop: 5,
-						color: '#CC4400',
-					}}>
-					{errorMessage}
-				</Txt>
-			)}
-		</LabelInputBox>
-	)
-}
+		</Txt>
+	</div>
+)
 
-export default LabelInput
+const Error = ({ children }: { children: ReactNode }) => (
+	<Txt
+		size="f10"
+		css={css`
+			margin-top: 5px;
+			color: red;
+		`}>
+		{children}
+	</Txt>
+)
+
+const Input = ({
+	error,
+	...props
+}: ComponentProps<typeof BaseInput> & { hasError?: boolean; error?: React.ReactNode }) => (
+	<div
+		css={css`
+			display: flex;
+			flex-direction: column;
+			column-gap: 5px;
+		`}>
+		<BaseInput spellCheck={false} {...props} />
+		{props.hasError && error}
+	</div>
+)
+
+const TextArea = ({
+	error,
+	...props
+}: ComponentProps<typeof BaseTextArea> & { hasError?: boolean; error?: React.ReactNode }) => (
+	<div
+		css={css`
+			display: flex;
+			flex-direction: column;
+			column-gap: 5px;
+		`}>
+		<BaseTextArea spellCheck={false} {...props} />
+		{props.hasError && error}
+	</div>
+)
+
+const Button = ({ children }: { children: ReactNode }) => <div>{children}</div>
+
+Input.Error = Error
+
+Label.Title = Title
+Label.Input = Input
+Label.Button = Button
+Label.TextArea = TextArea
+
+export default Label

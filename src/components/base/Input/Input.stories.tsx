@@ -11,4 +11,4 @@ export const Default = () => <InputComponent />
 
 export const Disabled = () => <InputComponent disabled value="disabled text" />
 
-export const Error = () => <InputComponent error />
+export const Error = () => <InputComponent hasError />

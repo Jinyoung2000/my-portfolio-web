@@ -1,7 +1,6 @@
 import Section from '@components/Section'
 import { Spacing } from '@components/base'
-import { Input } from '@components/base/Input'
-import { Txt } from '@components/base/Txt'
+import Label from '@components/base/LabelInput'
 
 const New = () => {
 	return (
@@ -9,15 +8,14 @@ const New = () => {
 			<Section.Title>게시글 작성하기</Section.Title>
 			<Section.Content>
 				<Spacing size={10} />
-				<label>
-					<Txt size="f14">제목</Txt>
-					<Spacing size={5} />
-					<Input
-						css={{
-							width: '100%',
-						}}
-					/>
-				</label>
+				<Label>
+					<Label.Title>하이</Label.Title>
+					<Label.Input error={<Label.Input.Error>에러</Label.Input.Error>} />
+				</Label>
+				<Label>
+					<Label.Title>내용</Label.Title>
+					<Label.TextArea />
+				</Label>
 			</Section.Content>
 		</Section>
 	)
