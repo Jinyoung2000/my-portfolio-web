@@ -1,15 +1,10 @@
 {
 	"semi": false,
-	"javascriptEnable": [
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact"
-	],
+	"javascriptEnable": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 	"printWidth": 120,
 	"useTabs": true,
 	"singleQuote": true,
 	"jsxSingleQuote": false,
-	"bracketSameLine": true,
+	"bracketSameLine": false,
 	"bracketSpacing": true
 }
