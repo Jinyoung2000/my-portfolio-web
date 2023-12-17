@@ -6,3 +6,4 @@ export interface Post {
 }
 
 export type SavePostRequest = Omit<Post, 'id' | 'createdAt'>
+export type UpdatePostRequest = Omit<Post, 'id' | 'createdAt'>

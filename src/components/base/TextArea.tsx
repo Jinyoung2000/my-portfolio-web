@@ -22,7 +22,11 @@ export const TextArea = styled(TextareaAutosize)<{ hasError?: boolean }>`
 			: `
       border-color: ${colors.coolgrey100};
 
-      &:not(:disabled) {
+      &[readonly] {
+        border: none;
+      }
+
+      &:not(:disabled):not([readonly]) {
         &:focus, &:active {
           border-color: ${colors.coolgrey00};
           box-shadow: 0px 0px 0px 2px ${colors.navy400};
@@ -32,6 +36,7 @@ export const TextArea = styled(TextareaAutosize)<{ hasError?: boolean }>`
           border-color: ${colors.coolgrey00};
         }
       }
+  
 
       &:disabled {
         background-color: ${colors.backgroundPrimary};

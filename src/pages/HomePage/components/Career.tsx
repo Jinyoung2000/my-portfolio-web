@@ -40,11 +40,9 @@ const CareerInfo = ({ career }: { career: CareerItem }) => {
 				{career.range.start} ~ {career.range.end ?? '재직'}
 			</p>
 			<Spacing size={10} />
-			<ul className="list-disc list-inside">
-				{career.descriptions.map((description) => (
-					<li key={description}>{description}</li>
-				))}
-			</ul>
+			{career.description.split('\n').map((description) => (
+				<div key={description}>{description}</div>
+			))}
 		</div>
 	)
 }

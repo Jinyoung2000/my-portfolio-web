@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import Section from '@components/Section'
 import { Button, Spacing } from '@components/base'
 import Label from '@components/base/LabelInput'
+import { Flex } from '@components/utils'
 import { withSuspense } from '@components/withSuspense'
 
 import { useSavePostMutation } from '@/remotes/query/post/useSavePostMutation'
-import { css } from '@emotion/react'
 
 const New = () => {
 	const [title, setTitle] = useState('')
@@ -43,21 +43,20 @@ const New = () => {
 					/>
 				</Label>
 				<Spacing size={10} />
-				<Button
-					css={css`
-						width: '100%';
-					`}
-					onClick={async () => {
-						// TODO: useTransition으로 비동기 로딩 처리
-						if (isLoading) {
-							return
-						}
-						await savePost({ title, content })
-						navigate(`/posts`)
-					}}
-				>
-					작성하기
-				</Button>
+				<Flex justify="flex-end">
+					<Button
+						onClick={async () => {
+							// TODO: useTransition으로 비동기 로딩 처리
+							if (isLoading) {
+								return
+							}
+							await savePost({ title, content })
+							navigate(`/posts`)
+						}}
+					>
+						작성하기
+					</Button>
+				</Flex>
 			</Section.Content>
 		</Section>
 	)

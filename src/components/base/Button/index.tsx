@@ -6,6 +6,7 @@ import { FONT_SIZE, FONT_WEIGHT } from '../Txt/constants'
 
 import { BUTTON_SIZE, BUTTON_TYPE } from './constants'
 
+// TODO: Button Loading Spinner
 export const Button = styled.button<{
 	size?: keyof typeof BUTTON_SIZE
 	color?: keyof typeof BUTTON_TYPE

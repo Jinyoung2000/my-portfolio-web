@@ -26,7 +26,7 @@ const Title = ({ children }: { children: ReactNode }) => (
 			height: 40px;
 		`}
 	>
-		<Txt size="f12" weight="bold">
+		<Txt size="f16" weight="bold">
 			{children}
 		</Txt>
 	</div>

@@ -1,11 +1,11 @@
 import { fetchPostById } from '@/remotes/apis/post'
-import { UseSuspenseQueryOptions, useSuspenseQuery } from '@tanstack/react-query'
+import { useSuspenseQuery } from '@tanstack/react-query'
 
-export function usePostById(id: number, options?: Omit<UseSuspenseQueryOptions, 'queryKey' | 'queryFn'>) {
+export function usePostById(_postId: number | string) {
+	const postId = Number(_postId)
 	const { data } = useSuspenseQuery({
-		queryKey: ['posts', id],
-		queryFn: () => fetchPostById(id),
-		...options,
+		queryKey: ['posts', postId],
+		queryFn: () => fetchPostById(postId),
 	})
 
 	return data

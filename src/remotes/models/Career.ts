@@ -9,5 +9,5 @@ export interface CareerItem {
 		site?: string
 	}
 	job: string
-	descriptions: string[]
+	description: string
 }

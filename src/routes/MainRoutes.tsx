@@ -13,7 +13,7 @@ const MainRoutes = () => {
 				<Route path="posts">
 					<Route path="" element={<PostPage.List />} />
 					<Route path="new" element={<PostPage.New />} />
-					<Route path=":id" element={<PostPage.Detail />} />
+					<Route path=":postId" element={<PostPage.Detail />} />
 				</Route>
 			</Route>
 		</Routes>
