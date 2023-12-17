@@ -71,13 +71,10 @@ const TextArea = ({
 	</div>
 )
 
-const Button = ({ children }: { children: ReactNode }) => <div>{children}</div>
-
 Input.Error = Error
 
 Label.Title = Title
 Label.Input = Input
-Label.Button = Button
 Label.TextArea = TextArea
 
 export default Label

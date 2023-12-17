@@ -15,7 +15,10 @@ const Title = ({ children }: { children: ReactNode }) => {
 	)
 }
 
-const Content = styled.div``
+const Content = styled.div`
+	display: flex;
+	flex-direction: column;
+`
 
 const Section = Object.assign(ForwardedSection, {
 	Title,
