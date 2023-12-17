@@ -7,7 +7,9 @@ import { withSuspense } from '@components/withSuspense'
 import { Post } from 'remotes/models/Post'
 
 import { usePosts } from '@/remotes/query/post/usePosts'
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { format } from 'date-fns'
 
 const PostPage = () => {
 	const posts = usePosts()
@@ -37,21 +39,33 @@ export default withSuspense(PostPage, {
 })
 
 const PostList = ({ posts }: { posts: Post[] }) => {
+	const navigate = useNavigate()
 	return (
 		<Table className="table-fixed w-full">
 			<thead>
 				<tr>
 					<th className="w-[20%]">제목</th>
-					<th className="w-[60%]">요약</th>
-					<th className="w-[20%]">작성일</th>
+					<th className="w-[50%]">요약</th>
+					<th className="w-fix">작성일</th>
 				</tr>
 			</thead>
 			<tbody>
 				{posts.map((post) => (
-					<tr key={post.id}>
+					<tr
+						css={css`
+							cursor: pointer;
+							:hover {
+								opacity: 0.7;
+							}
+						`}
+						key={post.id}
+						onClick={() => {
+							navigate(`/posts/${post.id}`)
+						}}
+					>
 						<td>{post.title}</td>
 						<td className="text-ellipsis overflow-hidden whitespace-nowrap">{post.content}</td>
-						<td>{post.createdAt}</td>
+						<td>{format(new Date(post.createdAt), 'yyyy년 MM월 dd일')}</td>
 					</tr>
 				))}
 			</tbody>
