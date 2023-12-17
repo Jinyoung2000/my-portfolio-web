@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const { VITE_API_HOST } = import.meta.env
+const { VITE_API_HOST, MODE } = import.meta.env
 
-console.log(VITE_API_HOST)
+const isProd = MODE === 'production'
 
 export const http = axios.create({
-	baseURL: VITE_API_HOST,
+	baseURL: isProd ? `${window.location.origin}/api` : VITE_API_HOST,
 	withCredentials: true,
 })
