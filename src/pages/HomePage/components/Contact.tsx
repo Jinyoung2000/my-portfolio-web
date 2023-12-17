@@ -12,7 +12,8 @@ const Contact = ({ contacts: { phoneNumber, email } }: { contacts: { phoneNumber
 					display: grid;
 					grid-template-columns: max-content auto;
 					column-gap: 10px;
-				`}>
+				`}
+			>
 				{isNotNil(email) && (
 					<>
 						<b>전화번호</b>

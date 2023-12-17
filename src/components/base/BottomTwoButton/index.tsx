@@ -41,7 +41,8 @@ export const FixedBottomTwoButton = ({ type = 'primary', children }: BottomTwoBu
 				padding: '16px 12px 16px',
 				backgroundColor: colors.coolgrey00,
 				boxShadow: '0px -2px 4px rgba(18, 22, 26, 0.04)',
-			}}>
+			}}
+		>
 			<Grid templateColumns={type === 'primary' ? '2fr 3fr' : '1fr 1fr'} columnGap={8}>
 				{childrenWithProps}
 			</Grid>

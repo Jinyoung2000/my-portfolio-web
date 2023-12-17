@@ -12,7 +12,8 @@ const Label = ({ children }: { children: ReactNode }) => (
 		css={css`
 			position: relative;
 			width: 100%;
-		`}>
+		`}
+	>
 		{children}
 	</label>
 )
@@ -23,7 +24,8 @@ const Title = ({ children }: { children: ReactNode }) => (
 			display: flex;
 			align-items: center;
 			height: 40px;
-		`}>
+		`}
+	>
 		<Txt size="f12" weight="bold">
 			{children}
 		</Txt>
@@ -36,7 +38,8 @@ const Error = ({ children }: { children: ReactNode }) => (
 		css={css`
 			margin-top: 5px;
 			color: red;
-		`}>
+		`}
+	>
 		{children}
 	</Txt>
 )
@@ -50,7 +53,8 @@ const Input = ({
 			display: flex;
 			flex-direction: column;
 			column-gap: 5px;
-		`}>
+		`}
+	>
 		<BaseInput spellCheck={false} {...props} />
 		{props.hasError && error}
 	</div>
@@ -65,7 +69,8 @@ const TextArea = ({
 			display: flex;
 			flex-direction: column;
 			column-gap: 5px;
-		`}>
+		`}
+	>
 		<BaseTextArea spellCheck={false} {...props} />
 		{props.hasError && error}
 	</div>

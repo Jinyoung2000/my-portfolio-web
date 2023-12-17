@@ -22,7 +22,8 @@ const PostPage = () => {
 					<Button
 						onClick={() => {
 							navigate('/posts/new')
-						}}>
+						}}
+					>
 						게시글 작성하기
 					</Button>
 				</Flex>

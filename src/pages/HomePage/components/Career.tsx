@@ -31,7 +31,8 @@ const CareerInfo = ({ career }: { career: CareerItem }) => {
 					if (career.company.site != null) {
 						window.open(career.company.site)
 					}
-				}}>
+				}}
+			>
 				{career.company.name}
 			</p>
 			<p className="font-semibold">{career.job}</p>
