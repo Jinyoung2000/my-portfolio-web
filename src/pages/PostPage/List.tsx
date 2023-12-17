@@ -5,8 +5,8 @@ import { Button, Spacing } from '@components/base'
 import { Flex } from '@components/utils'
 import { withSuspense } from '@components/withSuspense'
 import { Post } from 'remotes/models/Post'
-import { usePosts } from 'remotes/query/usePosts'
 
+import { usePosts } from '@/remotes/query/post/usePosts'
 import styled from '@emotion/styled'
 
 const PostPage = () => {

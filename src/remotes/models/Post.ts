@@ -4,3 +4,5 @@ export interface Post {
 	content: string
 	createdAt: string
 }
+
+export type SavePostRequest = Omit<Post, 'id' | 'createdAt'>

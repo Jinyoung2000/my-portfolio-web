@@ -1,4 +1,4 @@
-import { Post } from 'remotes/models/Post'
+import { Post, SavePostRequest } from 'remotes/models/Post'
 
 import { http } from '.'
 
@@ -12,9 +12,7 @@ export async function fetchPostById(postId: number) {
 	return data
 }
 
-export async function postSavePost(body: Post) {
-	const { data } = await http.post('/posts', {
-		data: body,
-	})
+export async function postSavePost(body: SavePostRequest) {
+	const { data } = await http.post<Post>('/posts', body)
 	return data
 }
